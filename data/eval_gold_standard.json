@@ -1,0 +1,18 @@
+[
+  {
+    "query": "How does Raft handle network partitions and prevent split-brain?",
+    "expected_chunk_ids": ["doc-raft-chunk-0"]
+  },
+  {
+    "query": "What triggers a follower node to transition to candidate state in Raft?",
+    "expected_chunk_ids": ["doc-raft-chunk-0"]
+  },
+  {
+    "query": "What are the core components of NIST SP 800-207 Zero Trust Architecture?",
+    "expected_chunk_ids": ["doc-ztna-chunk-0"]
+  },
+  {
+    "query": "Why does Zero Trust reject perimeter VPN security models?",
+    "expected_chunk_ids": ["doc-ztna-chunk-0"]
+  }
+]
