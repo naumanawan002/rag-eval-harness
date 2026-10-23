@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  rag-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Production RAG Evaluation Harness
+      - VECTOR_BACKEND=inmemory
+      - DENSE_TOP_K=15
+      - SPARSE_TOP_K=15
+      - RERANK_TOP_K=5
+    volumes:
+      - ./data:/app/data:ro
+    depends_on:
+      - qdrant
+
+  qdrant:
+    image: qdrant/qdrant:v1.8.4
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+
+volumes:
+  qdrant_storage:
